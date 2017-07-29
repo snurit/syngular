@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoproprieteListComponent } from './component/copropriete-list/copropriete-list.component';
 import { CoproprieteComponent } from './component/copropriete/copropriete.component';
 
+// import mock
+import { COPROPRIETES } from '../../mock/mock-coproprietes';
+
 // import { CoproprieteRouting } from './copropriete.routing';
 
 // Routing
@@ -21,7 +24,8 @@ export const CoproprieteRouting = RouterModule.forChild(coproprieteRoutes);
 
 @NgModule({
   imports: [
-    CoproprieteRouting
+    CoproprieteRouting,
+    BrowserModule
   ],
   declarations: [CoproprieteListComponent, CoproprieteComponent]
 })
