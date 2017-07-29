@@ -3,6 +3,6 @@
 </h2>
 <ul>
   <li *ngFor="let copropriete of coproprietes">
-    <span>{{ copropriete.id }}</span> {{ copropriete.nom }} - {{ copropriete.ville }} ({{ copropriete.code_postal }})
+    <span>{{ copropriete.id }}</span> {{ copropriete.nom }} - {{ copropriete.ville }} ({{ copropriete.code_postal }}) - {{ copropriete.coproprietaires?.length || '0' }} - {{ copropriete.lots?.length || '0' }}
   </li>
 </ul>
