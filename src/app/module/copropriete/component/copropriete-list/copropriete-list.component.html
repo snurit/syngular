@@ -2,7 +2,10 @@
   Liste des copropriétés
 </h2>
 <ul>
-  <li *ngFor="let copropriete of coproprietes">
+  <li *ngFor="let copropriete of coproprietes" (click)="onSelect(copropriete)" [class.selected]="copropriete === selectedCopropriete">
     <span>{{ copropriete.id }}</span> {{ copropriete.nom }} - {{ copropriete.ville }} ({{ copropriete.code_postal }}) - {{ copropriete.coproprietaires?.length || '0' }} - {{ copropriete.lots?.length || '0' }}
   </li>
 </ul>
+<div *ngIf="selectedCopropriete">
+  <app-copropriete [copropriete]="selectedCopropriete"></app-copropriete>
+</div>

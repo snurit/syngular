@@ -12,7 +12,7 @@ import { CoproprieteModule } from './module/copropriete/copropriete.module';
 // Routing
 export const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'  },
-    { path: 'home',  loadChildren: './app/app.module#AppModule' },
+    { path: 'home',  loadChildren: './app/app.module' },
     { path: 'copropriete', loadChildren: './module/copropriete/copropriete.module#CoproprieteModule'}
 ];
 

@@ -11,6 +11,7 @@ import { CoproprieteService } from '../../copropriete.service';
 export class CoproprieteListComponent implements OnInit {
 
   coproprietes: Copropriete[];
+  selectedCopropriete: Copropriete;
 
   constructor(private coproprieteService: CoproprieteService) { }
 
@@ -22,4 +23,7 @@ export class CoproprieteListComponent implements OnInit {
     this.coproprietes = this.coproprieteService.getCoproprietes();
   }
 
+  onSelect(copro: Copropriete): void {
+    this.selectedCopropriete = copro;
+  }
 }

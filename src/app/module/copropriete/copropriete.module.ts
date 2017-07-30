@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 import { CoproprieteListComponent } from './component/copropriete-list/copropriete-list.component';
 import { CoproprieteComponent } from './component/copropriete/copropriete.component';
@@ -25,7 +27,8 @@ export const CoproprieteRouting = RouterModule.forChild(coproprieteRoutes);
 @NgModule({
   imports: [
     CoproprieteRouting,
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   declarations: [CoproprieteListComponent, CoproprieteComponent]
 })
