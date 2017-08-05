@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import 'hammerjs';
 // import { AppRouting } from './app.routing';
 
 // Components
@@ -11,9 +12,8 @@ import { CoproprieteModule } from './module/copropriete/copropriete.module';
 
 // Routing
 export const appRoutes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full'  },
-    { path: 'home',  loadChildren: './app/app.module' },
-    { path: 'copropriete', loadChildren: './module/copropriete/copropriete.module#CoproprieteModule'}
+    { path: 'copropriete', loadChildren: './module/copropriete/copropriete.module#CoproprieteModule'},
+    { path: '', redirectTo: '/copropriete', pathMatch: 'full'  }
 ];
 
 export const AppRouting = RouterModule.forRoot(appRoutes, {

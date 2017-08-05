@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoproprieteComponent } from './copropriete.component';
+import { CoproprieteComponent } from './copropriete-detail.component';
 
 describe('CoproprieteComponent', () => {
   let component: CoproprieteComponent;

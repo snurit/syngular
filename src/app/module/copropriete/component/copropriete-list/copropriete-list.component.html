@@ -1,11 +1,15 @@
-<h2>
-  Liste des copropriétés
-</h2>
-<ul>
-  <li *ngFor="let copropriete of coproprietes" (click)="onSelect(copropriete)" [class.selected]="copropriete === selectedCopropriete">
-    <span>{{ copropriete.id }}</span> {{ copropriete.nom }} - {{ copropriete.ville }} ({{ copropriete.code_postal }}) - {{ copropriete.coproprietaires?.length || '0' }} - {{ copropriete.lots?.length || '0' }}
-  </li>
-</ul>
-<div *ngIf="selectedCopropriete">
-  <app-copropriete [copropriete]="selectedCopropriete"></app-copropriete>
-</div>
+<h2>Liste des copropriétés</h2>
+<md-list>
+  <md-list-item *ngFor="let copropriete of coproprietes" [class.selected]="copropriete === selectedCopropriete">
+    <md-icon md-list-icon (click)="onShowDetail(copropriete)">create</md-icon>
+    <md-icon md-list-icon (click)="onDelete(copropriete.id)">delete forever</md-icon>
+    <h3 md-line> {{ copropriete.nom }} </h3>
+    <p md-line>
+      <span>{{ copropriete.ville }} ({{ copropriete.code_postal }}) - {{ copropriete.coproprietaires?.length || '0' }} - {{ copropriete.lots?.length || '0' }}</span>
+    </p>
+  </md-list-item>
+</md-list>
+
+  <div *ngIf="selectedCopropriete">
+    <app-copropriete [copropriete]="selectedCopropriete" (hideCoproprieteDetailEmitter)="hideCoproprieteDetail($event)"></app-copropriete>
+  </div>

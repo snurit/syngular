@@ -1,0 +1,22 @@
+<!-- 
+<a routerLink="/copropriete-list">Liste</a>
+<router-outlet></router-outlet> 
+-->
+<md-dialog-content>
+  <md-input-container>
+    <input mdInput [(ngModel)]="copropriete.nom" placeholder="Nom" value="{{ copropriete.nom }}">
+  </md-input-container>
+  <md-input-container>
+    <input mdInput [(ngModel)]="copropriete.adresse" placeholder="Adresse" value="{{ copropriete.adresse }}">
+  </md-input-container>
+  <md-input-container>
+    <input mdInput [(ngModel)]="copropriete.code_postal" placeholder="Code Postal" value="{{ copropriete.code_postal }}">
+  </md-input-container>
+  <md-input-container>
+    <input mdInput [(ngModel)]="copropriete.ville" placeholder="Ville" value="{{ copropriete.ville }}">
+  </md-input-container>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-mini-fab><md-icon>save</md-icon></button>
+  <button md-mini-fab (click)="hideCoproprieteDetailComponent()"><md-icon>clear</md-icon></button>
+</md-dialog-actions>
