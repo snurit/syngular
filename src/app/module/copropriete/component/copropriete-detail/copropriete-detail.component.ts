@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Copropriete } from '../../../../model/copropriete';
+import { CoproprieteService } from '../../copropriete.service';
+
 
 @Component({
   selector: 'app-copropriete',
@@ -11,10 +13,14 @@ export class CoproprieteDetailComponent implements OnInit {
   @Input() copropriete: Copropriete;
   @Output() hideCoproprieteDetailEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private coproprieteService: CoproprieteService) { }
 
   hideCoproprieteDetailComponent() {
     this.hideCoproprieteDetailEmitter.emit(true);
+  }
+
+  updateCoproprieteDetail(copro: Copropriete) {
+    this.coproprieteService.updateCopropriete(copro);
   }
 
   ngOnInit() {

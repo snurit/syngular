@@ -27,7 +27,7 @@ export const LOTS_BERGERIE: Lot[] = [
     }
 ]
 
-export const LOTS_EDELWEISS: Lot[] = [
+export const LOTS_CRITERIUM: Lot[] = [
     {
         id: 1,
         num: 1,
@@ -56,5 +56,5 @@ export const LOTS_EDELWEISS: Lot[] = [
 
 export const LOTS_DUPONT: Lot[] = [LOTS_BERGERIE[1], LOTS_BERGERIE[3], LOTS_BERGERIE[4]];
 export const LOTS_DUCHEMIN: Lot[] = [LOTS_BERGERIE[2]];
-export const LOTS_LAFLEUR: Lot[] = [LOTS_EDELWEISS[1], LOTS_EDELWEISS[3], LOTS_EDELWEISS[4]];
+export const LOTS_LAFLEUR: Lot[] = [LOTS_CRITERIUM[1], LOTS_CRITERIUM[3], LOTS_CRITERIUM[4]];
 

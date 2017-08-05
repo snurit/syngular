@@ -36,6 +36,6 @@ export const CoproprieteRouting = RouterModule.forChild(coproprieteRoutes);
     BrowserAnimationsModule
   ],
   declarations: [CoproprieteListComponent, CoproprieteDetailComponent, CoproprieteDialogComponent],
-  entryComponents: [ CoproprieteDialogComponent ]
+  entryComponents: [ CoproprieteDialogComponent, CoproprieteDetailComponent ]
 })
 export class CoproprieteModule { }

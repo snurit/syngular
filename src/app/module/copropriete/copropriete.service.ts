@@ -19,4 +19,8 @@ export class CoproprieteService {
         this.coproprietes = this.coproprietes.filter( copropriete => copropriete.id !== id);
         return this.coproprietes;
     }
+
+    updateCopropriete(copro: Copropriete) {
+        this.coproprietes.filter( copropriete => copropriete.id === copro.id).push(copro);
+    }
 }

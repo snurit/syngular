@@ -1,14 +1,25 @@
-<h2>Liste des copropriétés</h2>
-<md-list>
-  <md-list-item *ngFor="let copropriete of coproprietes" [class.selected]="copropriete === selectedCopropriete">
-    <md-icon md-list-icon (click)="onShowDetail(copropriete)">create</md-icon>
-    <md-icon md-list-icon (click)="onDelete(copropriete.id)">delete forever</md-icon>
-    <h3 md-line> {{ copropriete.nom }} </h3>
-    <p md-line>
-      <span>{{ copropriete.ville }} ({{ copropriete.code_postal }}) - {{ copropriete.coproprietaires?.length || '0' }} - {{ copropriete.lots?.length || '0' }}</span>
-    </p>
-  </md-list-item>
-</md-list>
+<md-grid-list cols="2">
+  <md-grid-tile *ngFor="let copropriete of coproprietes">
+    <md-card class="copropriete-card" [class.selected]="copropriete === selectedCopropriete">
+      <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>{{ copropriete.nom }}</md-card-title>
+        <md-card-subtitle>{{ copropriete.code_postal }} {{ copropriete.ville }}</md-card-subtitle>
+      </md-card-header>
+      <img md-card-image src="{{ copropriete.image }}">
+      <md-card-content>
+        <ul>
+            <li>Nombre de copropriétaires : {{ copropriete.coproprietaires?.length || '0' }}</li>
+            <li>Nombre de lots : {{ copropriete.lots?.length || '0' }}</li>
+        </ul>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="onShowDetail(copropriete)"><md-icon>create</md-icon></button>
+        <button md-button (click)="onDelete(copropriete.id)"><md-icon>delete forever</md-icon></button>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
 
   <div *ngIf="selectedCopropriete">
     <app-copropriete [copropriete]="selectedCopropriete" (hideCoproprieteDetailEmitter)="hideCoproprieteDetail($event)"></app-copropriete>
